@@ -1,0 +1,85 @@
+#+OPTIONS: date:nil title:nil toc:nil author:nil
+#+STARTUP: overview
+* My personal SDDM custom theme
+#+BEGIN_HTML
+<div align="center">
+
+  <!-- License -->
+  <a href="https://github.com/luftmensch-luftmensch/sddm-theme/LICENSE"
+          ><img
+              src="https://img.shields.io/badge/License-GPL_v3-blue.svg?style=for-the-badge&color=red"
+              alt="License"
+      /></a>
+
+  <!-- Repository Size -->
+  <a href="https://github.com/luftmensch-luftmensch/Nixos/archive/refs/heads/main.zip"
+          ><img
+              src="https://img.shields.io/github/repo-size/luftmensch-luftmensch/Nixos?style=for-the-badge"
+              alt="GitHub repository size"
+      /></a>
+
+  <!-- Last commit -->
+  <a href="https://github.com/luftmensch-luftmensch/Nixos/commits/main"
+          ><img
+              src="https://img.shields.io/github/last-commit/luftmensch-luftmensch/Nixos?style=for-the-badge"
+              alt="Last commit"
+      /></a>
+ <!-- Work on my machine -->
+ <a href="https://img.shields.io/badge/WORKS%20ON-MY%20MACHINE-red?style=for-the-badge"
+           ><img
+             src="https://img.shields.io/badge/WORKS%20ON-MY%20MACHINE-red?style=for-the-badge"
+             alt="Work on my machine"
+      /></a>
+</div>
+#+END_HTML
+* About
+This is my customized version of [[https://github.com/eayus/sddm-theme-clairvoyance][sddm-theme-clairvoyance]] theme.
+
+-----
+It comes with auto-background change implemented along with Full/Partial Blur. With every login-session, a new background image will be shown
+-----
+* Features
+Things that make this version different from the original theme are ~auto-background changer/blur/date&time~. Two of these are editable from
+within the 'theme.conf' file:
+
+1. *blur*: 
+   This theme comes with GaussianBlur with ShaderEffects into this theme. You just have to use ~true~ / ~false~ to enable it. There is ~BlurRadius~ whose value is between 0-100.
+
+2. *Date and Time*: 
+   Date and Time is visible in the mid-bottom position by default. To change the position, manipulate the ~relativePositionX~ and ~relativePositionY~ values in the ~theme.conf~.
+* Background Changer
+The background image of the login-screen would change automatically, with a random image everytime the sddm session
+is restarted. That means, if you login and then logout, you'd likely to see a different background.
+* Issues and Contribution
+This is not really an issue, rather an implementation constraint created by ME, that is, the pictures path is hardcoded. I could have dynamically pulled the images from a folder or url but it simply is not my aim to do so as of now.
+
+If anyone wants, they can modify it as per their choice by either forking or cloning this repo.
+
+-----
+You could also fetch XML data from Bing/Yahoo/Flicker and many other sites in your implementation.
+-----
+
+-----
+If you would like to contribute to this repo please do so by creating a PR. I am open to suggestions.
+-----
+* Dependencies
+
+In order to use this custom theme, you must have the below QT5 dependencies:
+
++ ~qt5-graphicaleffects~
++ ~qt5-quickcontrols~
++ ~qt5-quickcontrols2~
+* Testing the theme
+Follow the below steps to test it:
+#+begin_src bash
+git clone https://github.com/luftmensch-luftmensch/sddm-theme
+cd sddm-theme
+#+end_src
+Now, assuming that you are inside of the parent directory of the repo,
+that is ~sddm-theme/~, you may test it from here using the below command:
+
+#+begin_src bash
+sddm-greeter --test-mode --theme sddm-peux-os-clairvoyance/
+#+end_src
+* Credits
+This is the modified version of [[https://github.com/eayus/sddm-theme-clairvoyance][Eayu's sddm-theme-clairvoyance]].
